@@ -1,0 +1,15 @@
+PODS:
+  - SwiftMessages (3.3.3)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - SwiftMessages
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  SwiftMessages: 09cea3336e3fb63c3578983c8aac65acaa6d884a
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 59a1e3b11ec0d054aa77098c7cb0f3d67326dd2c
+
+COCOAPODS: 1.2.1
