@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
+		833AAF041EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
 		8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC331EF49E6C00B494E6 /* AppDelegate.swift */; };
 		8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC351EF49E6C00B494E6 /* ViewController.swift */; };
 		8369DC391EF49E6C00B494E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC371EF49E6C00B494E6 /* Main.storyboard */; };
@@ -14,8 +16,10 @@
 		8369DC3E1EF49E6C00B494E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC3C1EF49E6C00B494E6 /* LaunchScreen.storyboard */; };
 		8369DC491EF49E6C00B494E6 /* AudioWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC481EF49E6C00B494E6 /* AudioWeatherTests.swift */; };
 		8369DC561EF49E9800B494E6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC541EF49E9800B494E6 /* LICENSE */; };
-		8369DC571EF49E9800B494E6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC551EF49E9800B494E6 /* README.md */; };
+		8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */; };
+		8369DC5B1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */; };
 		EB4D9AF32F0DB65BCCABC3A5 /* Pods_AudioWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A849419BE54BE522003292 /* Pods_AudioWeather.framework */; };
+		F86664268956028458EDD31C /* Pods_AudioWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445CF3D9F462EED27A2DC50F /* Pods_AudioWeatherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445CF3D9F462EED27A2DC50F /* Pods_AudioWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABD526DC97F0E76A118FCA1 /* Pods-AudioWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.release.xcconfig"; sourceTree = "<group>"; };
+		833AAF021EF5E2980043E507 /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
 		8369DC301EF49E6C00B494E6 /* AudioWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8369DC331EF49E6C00B494E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8369DC351EF49E6C00B494E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,8 +48,11 @@
 		8369DC4A1EF49E6C00B494E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8369DC541EF49E9800B494E6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8369DC551EF49E9800B494E6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
+		C7B8136B6535641268DD18D6 /* Pods-AudioWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeatherTests/Pods-AudioWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8024EA220565BAF4FBBF242 /* Pods-AudioWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		D2A849419BE54BE522003292 /* Pods_AudioWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43360A1A9AC236BD55A3717 /* Pods-AudioWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeatherTests/Pods-AudioWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86664268956028458EDD31C /* Pods_AudioWeatherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +80,18 @@
 			children = (
 				C8024EA220565BAF4FBBF242 /* Pods-AudioWeather.debug.xcconfig */,
 				6ABD526DC97F0E76A118FCA1 /* Pods-AudioWeather.release.xcconfig */,
+				E43360A1A9AC236BD55A3717 /* Pods-AudioWeatherTests.debug.xcconfig */,
+				C7B8136B6535641268DD18D6 /* Pods-AudioWeatherTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		833AAF011EF5E2820043E507 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				833AAF021EF5E2980043E507 /* WeatherObject.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		8369DC271EF49E6C00B494E6 = {
@@ -97,6 +117,8 @@
 		8369DC321EF49E6C00B494E6 /* AudioWeather */ = {
 			isa = PBXGroup;
 			children = (
+				833AAF011EF5E2820043E507 /* Model */,
+				8369DC581EF4A29700B494E6 /* Network */,
 				8369DC531EF49E8300B494E6 /* Documents */,
 				8369DC331EF49E6C00B494E6 /* AppDelegate.swift */,
 				8369DC351EF49E6C00B494E6 /* ViewController.swift */,
@@ -126,10 +148,19 @@
 			name = Documents;
 			sourceTree = "<group>";
 		};
+		8369DC581EF4A29700B494E6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		89555BCC36F3CC63ED44B779 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D2A849419BE54BE522003292 /* Pods_AudioWeather.framework */,
+				445CF3D9F462EED27A2DC50F /* Pods_AudioWeatherTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8369DC501EF49E6C00B494E6 /* Build configuration list for PBXNativeTarget "AudioWeatherTests" */;
 			buildPhases = (
+				3539AAAD2AE276A84C8A057D /* [CP] Check Pods Manifest.lock */,
 				8369DC401EF49E6C00B494E6 /* Sources */,
 				8369DC411EF49E6C00B494E6 /* Frameworks */,
 				8369DC421EF49E6C00B494E6 /* Resources */,
+				ABA303B61843E3D3F173F2C4 /* [CP] Embed Pods Frameworks */,
+				653DE7C7E74EAAF27253AD3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +286,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3539AAAD2AE276A84C8A057D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5587F7728457479D5F5B557E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +314,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		653DE7C7E74EAAF27253AD3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioWeatherTests/Pods-AudioWeatherTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABA303B61843E3D3F173F2C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioWeatherTests/Pods-AudioWeatherTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF8CB5D165188A2EC8DC9017 /* [CP] Check Pods Manifest.lock */ = {
@@ -289,8 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8369DC571EF49E9800B494E6 /* README.md in Sources */,
 				8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */,
+				833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */,
+				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8369DC5B1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				8369DC491EF49E6C00B494E6 /* AudioWeatherTests.swift in Sources */,
+				833AAF041EF5E2980043E507 /* WeatherObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +536,9 @@
 		};
 		8369DC511EF49E6C00B494E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E43360A1A9AC236BD55A3717 /* Pods-AudioWeatherTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AudioWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -468,8 +551,9 @@
 		};
 		8369DC521EF49E6C00B494E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7B8136B6535641268DD18D6 /* Pods-AudioWeatherTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AudioWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -499,6 +583,7 @@
 				8369DC4F1EF49E6C00B494E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8369DC501EF49E6C00B494E6 /* Build configuration list for PBXNativeTarget "AudioWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +592,7 @@
 				8369DC521EF49E6C00B494E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

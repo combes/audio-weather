@@ -6,7 +6,15 @@ use_frameworks!
 inhibit_all_warnings!
 
 # Pods
-target 'AudioWeather' do
-pod 'SwiftyJSON'
+def shared_pods
+pod "SwiftyJSON"
 pod 'SwiftMessages'
+end
+
+target 'AudioWeather' do
+shared_pods
+end
+
+target 'AudioWeatherTests' do
+shared_pods
 end

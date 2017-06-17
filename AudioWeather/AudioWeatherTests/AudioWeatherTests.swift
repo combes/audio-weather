@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyJSON
 @testable import AudioWeather
 
 class AudioWeatherTests: XCTestCase {
@@ -21,16 +22,25 @@ class AudioWeatherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testWeatherAPICall() {
+        
+        let service = WeatherAPIManager()
+        
+        // We need to test an asynchronous callback
+        let e = expectation(description: "Weather API")
+        
+        // Make asynchronous call
+        service.getWeatherForLocation("austin, tx") { (json) in
+            let object = WeatherObject(json: json)
+            debugPrint(object)
+            e.fulfill()
+        }
+
+        // Wait for expectation to be fulfilled
+        waitForExpectations(timeout: 1) { (error) in
+            if let error = error {
+                XCTFail(error.localizedDescription)
+            }
         }
     }
-    
 }
