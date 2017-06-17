@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
 		833AAF041EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
+		833AAF061EF5F02B0043E507 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF051EF5F02B0043E507 /* README.md */; };
 		8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC331EF49E6C00B494E6 /* AppDelegate.swift */; };
 		8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC351EF49E6C00B494E6 /* ViewController.swift */; };
 		8369DC391EF49E6C00B494E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC371EF49E6C00B494E6 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		445CF3D9F462EED27A2DC50F /* Pods_AudioWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABD526DC97F0E76A118FCA1 /* Pods-AudioWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.release.xcconfig"; sourceTree = "<group>"; };
 		833AAF021EF5E2980043E507 /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+		833AAF051EF5F02B0043E507 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8369DC301EF49E6C00B494E6 /* AudioWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8369DC331EF49E6C00B494E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8369DC351EF49E6C00B494E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +49,6 @@
 		8369DC481EF49E6C00B494E6 /* AudioWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWeatherTests.swift; sourceTree = "<group>"; };
 		8369DC4A1EF49E6C00B494E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8369DC541EF49E9800B494E6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		8369DC551EF49E9800B494E6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
 		C7B8136B6535641268DD18D6 /* Pods-AudioWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeatherTests/Pods-AudioWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8024EA220565BAF4FBBF242 /* Pods-AudioWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,8 +143,8 @@
 		8369DC531EF49E8300B494E6 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				833AAF051EF5F02B0043E507 /* README.md */,
 				8369DC541EF49E9800B494E6 /* LICENSE */,
-				8369DC551EF49E9800B494E6 /* README.md */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -370,6 +371,7 @@
 			files = (
 				8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */,
 				833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */,
+				833AAF061EF5F02B0043E507 /* README.md in Sources */,
 				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */,
 			);
