@@ -31,6 +31,8 @@ class AudioWeatherTests: XCTestCase {
         
         // Make asynchronous call
         service.getWeatherForLocation("austin, tx") { (json) in
+            XCTAssert(json != JSON.null, "Failed to retrieve JSON")
+            // We depend on the JSON to return a complete set of values.
             let object = WeatherObject(json: json)
             debugPrint(object)
             e.fulfill()

@@ -93,6 +93,7 @@ class WeatherObject: CustomDebugStringConvertible {
         return description
     }
 
+    // If we really want to be pedantic we can make this a failable initializer.
     required init(json: JSON) {
         
         // Start of relevant JSON
