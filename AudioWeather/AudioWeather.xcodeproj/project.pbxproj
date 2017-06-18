@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
 		833AAF041EF5E2980043E507 /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherObject.swift */; };
-		833AAF061EF5F02B0043E507 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF051EF5F02B0043E507 /* README.md */; };
 		8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC331EF49E6C00B494E6 /* AppDelegate.swift */; };
 		8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC351EF49E6C00B494E6 /* ViewController.swift */; };
 		8369DC391EF49E6C00B494E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC371EF49E6C00B494E6 /* Main.storyboard */; };
@@ -371,7 +370,6 @@
 			files = (
 				8369DC361EF49E6C00B494E6 /* ViewController.swift in Sources */,
 				833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */,
-				833AAF061EF5F02B0043E507 /* README.md in Sources */,
 				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				8369DC341EF49E6C00B494E6 /* AppDelegate.swift in Sources */,
 			);

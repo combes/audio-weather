@@ -16,6 +16,39 @@ enum WeatherFields: String {
     case query = "query"
     case results = "results"
     case channel = "channel"
+    case title = "title"
+    case item = "item"
+}
+
+enum ConditionFields: String {
+    case condition = "condition"
+    case code = "code"
+    case date = "date"
+    case temperature = "temp"
+    case text = "text"
+}
+
+enum WindFields: String {
+    case wind = "wind"
+    case chill = "chill"
+    case direction = "direction"
+    case speed = "speed"
+}
+
+enum AstronomyFields: String {
+    case astronomy = "astronomy"
+    case sunrise = "sunrise"
+    case sunset = "sunset"
+}
+
+enum ForecastFields: String {
+    case forecast = "forecast"
+    case code = "code"
+    case date = "date"
+    case day = "day"
+    case high = "high"
+    case low = "low"
+    case text = "text"
 }
 
 enum UnitFields: String {
@@ -65,4 +98,3 @@ class WeatherAPIManager: NSObject {
         task.resume()
     }
 }
-
