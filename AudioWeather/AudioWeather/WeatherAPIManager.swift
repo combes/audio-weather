@@ -59,14 +59,19 @@ enum UnitFields: String {
     case temperature = "temperature"
 }
 
-class WeatherAPIManager: NSObject {
+class WeatherAPIManager {
     
     // Using public RSS feed from Yahoo Weather API
     let baseURL = "https://query.yahooapis.com/v1/public/yql?q="
     // Limiting "places" to 1 for simplicity
     let address = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%@\")&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys)"
 
-    func getWeatherForLocation(_ location: String, onCompletion: @escaping (JSON) -> Void) {
+    /// Fetch weather data from server based on provided location.
+    ///
+    /// - Parameters:
+    ///   - location: A location string (e.g. "Austin TX")
+    ///   - onCompletion: Closure called after operation completes. May return JSON.null if no data retrieved.
+    func weatherForLocation(_ location: String, onCompletion: @escaping (JSON) -> Void) {
         // Create address path using provided location and format string
         let fullAddress = String(format: address, location)
         
@@ -81,7 +86,12 @@ class WeatherAPIManager: NSObject {
         }
     }
     
-    // MARK: Perform GET Request
+    
+    /// Make an HTTP "Get" request to a server.
+    ///
+    /// - Parameters:
+    ///   - path: URL of server
+    ///   - onCompletion: Closure called after operation completes. May return JSON.null if no data retrieved.
     private func makeHTTPGetRequest(path: String, onCompletion: @escaping ServiceResponse) {
         let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
         

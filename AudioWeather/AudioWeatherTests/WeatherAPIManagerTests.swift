@@ -1,16 +1,15 @@
 //
-//  AudioWeatherTests.swift
-//  AudioWeatherTests
+//  WeatherAPIManagerTests.swift
+//  AudioWeather
 //
-//  Created by Christopher Combes on 6/16/17.
+//  Created by Christopher Combes on 6/19/17.
 //  Copyright © 2017 Christopher Combes. All rights reserved.
 //
 
 import XCTest
 import SwiftyJSON
-@testable import AudioWeather
 
-class AudioWeatherTests: XCTestCase {
+class WeatherAPIManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -30,14 +29,14 @@ class AudioWeatherTests: XCTestCase {
         let e = expectation(description: "Weather API")
         
         // Make asynchronous call
-        service.getWeatherForLocation("austin, tx") { (json) in
+        service.weatherForLocation("austin, tx") { (json) in
             XCTAssert(json != JSON.null, "Failed to retrieve JSON")
             // We depend on the JSON to return a complete set of values.
             let object = WeatherObject(json: json)
             debugPrint(object)
             e.fulfill()
         }
-
+        
         // Wait for expectation to be fulfilled
         waitForExpectations(timeout: 1) { (error) in
             if let error = error {
@@ -45,4 +44,5 @@ class AudioWeatherTests: XCTestCase {
             }
         }
     }
+    
 }
