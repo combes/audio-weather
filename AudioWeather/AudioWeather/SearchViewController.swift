@@ -15,11 +15,18 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(dismissView))
+        
         searchField.becomeFirstResponder()
     }
     
     deinit {
         searchField.resignFirstResponder()
+    }
+    
+    // MARK: Actions
+    func dismissView() {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: UITextFieldDelegate
@@ -31,7 +38,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             loader.refresh()
         }
         
-        dismiss(animated: true, completion: nil)
+        dismissView()
 
         return true
     }

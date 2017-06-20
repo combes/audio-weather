@@ -209,7 +209,7 @@
                         <outlet property="windChill" destination="kcS-gr-hcr" id="6ji-gi-e2F"/>
                         <outlet property="windDirection" destination="31S-Vj-Uh9" id="Gn4-Kw-bnJ"/>
                         <outlet property="windSpeed" destination="sWf-jP-Sfc" id="gHf-Ic-xdK"/>
-                        <segue destination="Ef7-cA-q1x" kind="presentation" identifier="search" id="3jR-iK-6tx"/>
+                        <segue destination="WhA-sW-0Sb" kind="presentation" identifier="search" id="3jR-iK-6tx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -322,7 +322,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcC-Ef-2K4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OcC-Ef-2K4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -352,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Somewhere TX" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-og-3kh">
-                                <rect key="frame" x="87" y="132" width="200" height="30"/>
+                                <rect key="frame" x="87" y="176" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="MRM-kT-jrD"/>
                                 </constraints>
@@ -374,13 +374,33 @@
                             <constraint firstAttribute="trailing" secondItem="zXr-2T-sVR" secondAttribute="trailing" id="sh0-Dm-olQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JOH-6G-KjJ"/>
                     <connections>
                         <outlet property="searchField" destination="XCJ-og-3kh" id="eYC-mS-NQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wov-zH-0gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="980"/>
+            <point key="canvasLocation" x="2800.8000000000002" y="979.16041979010504"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fut-AM-tUJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WhA-sW-0Sb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jEa-Zm-pa1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ef7-cA-q1x" kind="relationship" relationship="rootViewController" id="t4z-Oi-ADl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-uW-PyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5999999999999" y="979.16041979010504"/>
         </scene>
     </scenes>
     <resources>

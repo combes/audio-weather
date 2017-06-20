@@ -67,10 +67,12 @@ class MainViewController: UIViewController {
     func updateFieldsMainThread() {
         let data = WeatherLoader().data
         guard data != JSON.null else {
+            clearFields()
             return
         }
         
         guard let object = WeatherObject(json: data) else {
+            clearFields()
             return
         }
         
