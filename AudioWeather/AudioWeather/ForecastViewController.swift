@@ -23,16 +23,31 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.layer.backgroundColor = UIColor.clear.cgColor
         tableView.backgroundColor = UIColor.clear
         
-        let data = WeatherLoader().data
-        if data != JSON.null {
-            weatherObject = WeatherObject(json: data)
-            tableView.reloadData()
-        }
+        updateTable()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: .weatherNotification, object: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    func updateTable() {
+        DispatchQueue.main.async {
+            let data = WeatherLoader().data
+            if data != JSON.null {
+                self.weatherObject = WeatherObject(json: data)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (weatherObject?.forecast.count)!
+        if let object = weatherObject {
+            return object.forecast.count
+        }
+        return 0
     }
     
     // MARK: UITableViewDelegate
