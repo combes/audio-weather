@@ -52,6 +52,9 @@ class WeatherObject: CustomDebugStringConvertible {
     var speedUnit: String!
     var temperatureUnit: String!
     
+    // Location
+    var city: String!
+    
     // Condition
     var code = 0
     var date: Date!
@@ -59,9 +62,9 @@ class WeatherObject: CustomDebugStringConvertible {
     var conditionText: String!
     
     // Wind
-    var chill: String!
-    var direction = 0.0
-    var speed = 0.0
+    var windChill: String!
+    var windDirection: String!
+    var windSpeed = 0.0
     
     // Astronomy
     var sunrise: String!
@@ -74,14 +77,17 @@ class WeatherObject: CustomDebugStringConvertible {
         if let titleValue = title {
             description += "Title(\"\(titleValue)\")\n"
         }
+        if let cityValue = city {
+            description += "City(\"\(cityValue)\")\n"
+        }
         if let distanceValue = distanceUnit, let pressureValue = pressureUnit, let speedValue = speedUnit, let temperatureValue = temperatureUnit {
             description += "Units(distance: \(distanceValue), pressure: \(pressureValue), speed: \(speedValue), temperature: \(temperatureValue))\n"
         }
         if let dateValue = date, let temperatureValue = temperature, let conditionValue = conditionText {
             description += "Condition(code: \(code), date: \(dateValue), temperature: \(temperatureValue), text: \(conditionValue))\n"
         }
-        if let chillValue = chill {
-            description += "Wind(chill: \(chillValue), direction: \(direction), speed: \(speed))\n"
+        if let chillValue = windChill {
+            description += "Wind(chill: \(chillValue), direction: \(windDirection), speed: \(windSpeed))\n"
         }
         if let sunriseValue = sunrise, let sunsetValue = sunset {
             description += "Astronomy(sunrise: \(sunriseValue), sunset: \(sunsetValue))\n"
@@ -93,7 +99,7 @@ class WeatherObject: CustomDebugStringConvertible {
         return description
     }
 
-    // If we really want to be pedantic we can make this a failable initializer.
+    // TODO: If we really want to be pedantic we can make this a failable initializer.
     required init(json: JSON) {
         
         // Start of relevant JSON
@@ -109,33 +115,36 @@ class WeatherObject: CustomDebugStringConvertible {
         // Parse title
         title = channel[WeatherFields.title.rawValue].string
 
-        // Parse condition
-        var condition = channel[ConditionFields.condition.rawValue]
-        if let codeText = condition[ConditionFields.code.rawValue].string {
-            code = Int(codeText) ?? 0
-        }
-        // TODO: date = condition[ConditionFields.date.rawValue]
-        date = Date()
-        temperature = channel[ConditionFields.temperature.rawValue].string
-        conditionText = channel[ConditionFields.text.rawValue].string
-                    
+        // Parse city
+        city = channel[LocationFields.city.rawValue].string
+        
         // Parse wind
         var wind = channel[WindFields.wind.rawValue]
-        chill = wind[WindFields.chill.rawValue].string
-        if let directionText = wind[WindFields.direction.rawValue].string {
-            direction = Double(directionText) ?? 0
-        }
+        windChill = wind[WindFields.chill.rawValue].string
+        windDirection = wind[WindFields.direction.rawValue].string
         if let speedText = wind[WindFields.speed.rawValue].string {
-            speed = Double(speedText) ?? 0
+            windSpeed = Double(speedText) ?? 0
         }
         
         // Parse astronomy
         var astronomy = channel[AstronomyFields.astronomy.rawValue]
         sunrise = astronomy[AstronomyFields.sunrise.rawValue].string
         sunset = astronomy[AstronomyFields.sunset.rawValue].string
+        
+        // Parse item with conditions
+        var item = channel[WeatherFields.item.rawValue]
+        var condition = item[ConditionFields.condition.rawValue]
+        if let codeText = condition[ConditionFields.code.rawValue].string {
+            code = Int(codeText) ?? 0
+        }
+        // TODO: date = condition[ConditionFields.date.rawValue]
+        date = Date()
+        temperature = condition[ConditionFields.temperature.rawValue].string
+        conditionText = condition[ConditionFields.text.rawValue].string
+                    
 
         // Parse forecast
-        let forecastDays = channel[WeatherFields.item.rawValue][ForecastFields.forecast.rawValue]
+        let forecastDays = item[ForecastFields.forecast.rawValue]
         for (_, day):(String, JSON) in forecastDays {
             forecast.append(ForecastObject(json: day))
         }

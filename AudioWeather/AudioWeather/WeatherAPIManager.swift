@@ -20,6 +20,10 @@ enum WeatherFields: String {
     case item = "item"
 }
 
+enum LocationFields: String {
+    case city = "city"
+}
+
 enum ConditionFields: String {
     case condition = "condition"
     case code = "code"

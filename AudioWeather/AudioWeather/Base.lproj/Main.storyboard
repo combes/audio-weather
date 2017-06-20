@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7k-yW-uCF">
-                                        <rect key="frame" x="30.5" y="29" width="85" height="17"/>
+                                        <rect key="frame" x="31" y="29" width="85" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -57,7 +57,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bQH-uu-fKl">
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="156"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31S-Vj-Uh9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="31S-Vj-Uh9">
                                                 <rect key="frame" x="0.0" y="56.5" width="76" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="76" id="PK7-Mh-ye2"/>
@@ -94,7 +94,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Ydj-rc-kIa" secondAttribute="bottom" constant="1" id="RTl-B2-DdH"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-gr-hcr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="82°F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kcS-gr-hcr">
                                                 <rect key="frame" x="216" y="56.5" width="76" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="76" id="77c-zV-x2g"/>
@@ -193,6 +193,17 @@
                             <constraint firstItem="1Pu-Jl-hhn" firstAttribute="top" secondItem="ZSp-xP-Mu0" secondAttribute="bottom" constant="36" id="zEd-cZ-km5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="background" destination="6PW-g3-QdV" id="bzF-ew-T5T"/>
+                        <outlet property="city" destination="kPI-nY-g1b" id="nvv-ev-Wtq"/>
+                        <outlet property="condition" destination="o7k-yW-uCF" id="CiA-5a-BUP"/>
+                        <outlet property="sunrise" destination="8vo-ZD-xTG" id="GIc-1f-XoM"/>
+                        <outlet property="sunset" destination="1En-Ay-wGc" id="d0h-Eg-W5t"/>
+                        <outlet property="temperature" destination="wjK-0v-J1R" id="zXx-fR-iU0"/>
+                        <outlet property="windChill" destination="kcS-gr-hcr" id="6ji-gi-e2F"/>
+                        <outlet property="windDirection" destination="31S-Vj-Uh9" id="Gn4-Kw-bnJ"/>
+                        <outlet property="windSpeed" destination="sWf-jP-Sfc" id="gHf-Ic-xdK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

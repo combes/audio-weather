@@ -31,7 +31,10 @@ class WeatherLoader {
         get {
             if let d = UserDefaults.standard.object(forKey: weatherDataKey) {
                 let dataObject = d as! Data
-                return NSKeyedUnarchiver.unarchiveObject(with: dataObject) as! JSON
+                guard let dictionary = NSKeyedUnarchiver.unarchiveObject(with: dataObject) else {
+                    return JSON.null
+                }
+                return JSON(dictionary)
             }
             return JSON.null
         }
