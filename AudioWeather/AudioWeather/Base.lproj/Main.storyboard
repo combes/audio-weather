@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iax-eu-3SE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="MainViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,10 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-g3-QdV">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-g3-QdV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Pu-Jl-hhn" userLabel="Underlay">
+                            <imageView alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Pu-Jl-hhn" userLabel="Underlay">
                                 <rect key="frame" x="0.0" y="240" width="375" height="427"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -176,6 +176,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6PW-g3-QdV" secondAttribute="trailing" id="3zO-Tw-gz8"/>
                             <constraint firstItem="qob-Pi-iDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7s2-gJ-7Lf"/>
@@ -192,7 +193,12 @@
                             <constraint firstItem="1Pu-Jl-hhn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yZI-jM-yog"/>
                             <constraint firstItem="1Pu-Jl-hhn" firstAttribute="top" secondItem="ZSp-xP-Mu0" secondAttribute="bottom" constant="36" id="zEd-cZ-km5"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mxo-lw-iAd" appends="YES" id="W7g-WL-1jv"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="4d7-QA-igx"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="background" destination="6PW-g3-QdV" id="bzF-ew-T5T"/>
                         <outlet property="city" destination="kPI-nY-g1b" id="nvv-ev-Wtq"/>
@@ -206,19 +212,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="mxo-lw-iAd">
+                    <connections>
+                        <segue destination="Vvt-JT-a7K" kind="show" id="9Gv-iz-Zgp"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1863" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Forecast View Controller-->
         <scene sceneID="02t-57-HdL">
             <objects>
-                <viewController id="Vvt-JT-a7K" sceneMemberID="viewController">
+                <viewController id="Vvt-JT-a7K" customClass="ForecastViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cye-4j-Xm6"/>
                         <viewControllerLayoutGuide type="bottom" id="CiP-eo-PLR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XgM-hk-q3e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="2Ta-dc-aly">
@@ -226,7 +237,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncA-Ba-Y2D">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -275,11 +286,40 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nvl-t5-kQz" appends="YES" id="sBi-Du-0sP"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="uSP-mC-6Eb"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xa-s7-GPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="nvl-t5-kQz">
+                    <connections>
+                        <outlet property="delegate" destination="Vvt-JT-a7K" id="Avh-Xn-emd"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="911" y="137"/>
+            <point key="canvasLocation" x="2641" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9zG-9L-0mo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iax-eu-3SE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcC-Ef-2K4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="h9n-7D-wVY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78L-gh-3jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
         </scene>
     </scenes>
     <resources>

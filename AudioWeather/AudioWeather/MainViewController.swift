@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  AudioWeather
 //
 //  Created by Christopher Combes on 6/16/17.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var city: UILabel!
@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // We don't need to see navigation in the main view
+        navigationController?.navigationBar.isHidden = true
+        
         // Do any additional setup after loading the view, typically from a nib.
         let data = WeatherLoader().data
         if data == JSON.null {
