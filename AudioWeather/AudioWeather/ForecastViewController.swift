@@ -7,20 +7,44 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class ForecastViewController: UIViewController, UIGestureRecognizerDelegate {
+class ForecastViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var weatherObject: WeatherObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.navigationBar.isHidden = false
+        
+        tableView.layer.backgroundColor = UIColor.clear.cgColor
+        tableView.backgroundColor = UIColor.clear
+        
+        let data = WeatherLoader().data
+        if data != JSON.null {
+            weatherObject = WeatherObject(json: data)
+            tableView.reloadData()
+        }
     }
 
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        if ((gestureRecognizer as? UISwipeGestureRecognizer) != nil) {
-            // TODO: Why is this conditional succeeding for "tap" gestures?
-            self.navigationController?.popViewController(animated: true)
+    // MARK: UITableViewDataSource
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (weatherObject?.forecast.count)!
+    }
+    
+    // MARK: UITableViewDelegate
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ForecastTableCell
+        
+        if let forecast = weatherObject?.forecast[indexPath.row] {
+            cell.configure(forecast: forecast)
         }
-        return true
+        
+        return cell
+        
     }
 }

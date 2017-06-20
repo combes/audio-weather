@@ -12,8 +12,8 @@ class ForecastObject: CustomDebugStringConvertible {
     var code = 0
     var date: Date!
     var day: String!
-    var high = 0
-    var low = 0
+    var high: String!
+    var low: String!
     var text: String!
     
     var debugDescription: String {
@@ -31,12 +31,8 @@ class ForecastObject: CustomDebugStringConvertible {
         // TODO: date = json[ForecastFields.date.rawValue]
         date = Date()
         day = json[ForecastFields.day.rawValue].string
-        if let highText = json[ForecastFields.high.rawValue].string {
-            high = Int(highText) ?? 0
-        }
-        if let lowText = json[ForecastFields.low.rawValue].string {
-            low = Int(lowText) ?? 0
-        }
+        high = json[ForecastFields.high.rawValue].string
+        low = json[ForecastFields.low.rawValue].string
         text = json[ForecastFields.text.rawValue].string
     }
 }

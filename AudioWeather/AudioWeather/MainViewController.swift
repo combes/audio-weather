@@ -24,9 +24,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // We don't need to see navigation in the main view
-        navigationController?.navigationBar.isHidden = true
-        
         // Do any additional setup after loading the view, typically from a nib.
         let data = WeatherLoader().data
         if data == JSON.null {
@@ -40,6 +37,13 @@ class MainViewController: UIViewController {
         WeatherLoader().refresh()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateFields), name: .weatherNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // We don't need to see navigation in the main view
+        navigationController?.navigationBar.isHidden = true
     }
     
     deinit {
