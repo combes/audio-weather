@@ -14,6 +14,7 @@ typealias ServiceResponse = (JSON, Error?) -> Void
 // Fields are based on the Yahoo Weather API
 enum WeatherFields: String {
     case query = "query"
+    case count = "count"
     case results = "results"
     case channel = "channel"
     case title = "title"
@@ -21,6 +22,7 @@ enum WeatherFields: String {
 }
 
 enum LocationFields: String {
+    case location = "location"
     case city = "city"
 }
 

@@ -36,14 +36,10 @@ class MainViewController: UIViewController {
         
         WeatherLoader().refresh()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateFields), name: .weatherNotification, object: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        let searchItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(showSearch))
+        navigationItem.rightBarButtonItem = searchItem
         
-        // We don't need to see navigation in the main view
-        navigationController?.navigationBar.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(updateFields), name: .weatherNotification, object: nil)
     }
     
     deinit {
@@ -74,7 +70,10 @@ class MainViewController: UIViewController {
             return
         }
         
-        let object = WeatherObject(json: data)
+        guard let object = WeatherObject(json: data) else {
+            return
+        }
+        
         city.text = object.city
         condition.text = object.conditionText
         temperature.text = String(format: "%@°%@", object.temperature, object.temperatureUnit)
@@ -85,6 +84,12 @@ class MainViewController: UIViewController {
         sunset.text = object.sunset
     }
     
+    // MARK: Action methods
+    func showSearch() {
+        performSegue(withIdentifier: "search", sender: self)
+    }
+
+    // MARK: Helper methods
     func updateFields() {
         DispatchQueue.main.async {
             self.updateFieldsMainThread()

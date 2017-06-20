@@ -209,6 +209,7 @@
                         <outlet property="windChill" destination="kcS-gr-hcr" id="6ji-gi-e2F"/>
                         <outlet property="windDirection" destination="31S-Vj-Uh9" id="Gn4-Kw-bnJ"/>
                         <outlet property="windSpeed" destination="sWf-jP-Sfc" id="gHf-Ic-xdK"/>
+                        <segue destination="Ef7-cA-q1x" kind="presentation" identifier="search" id="3jR-iK-6tx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -223,7 +224,7 @@
         <!--Forecast View Controller-->
         <scene sceneID="02t-57-HdL">
             <objects>
-                <viewController id="Vvt-JT-a7K" customClass="ForecastViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forecast" id="Vvt-JT-a7K" customClass="ForecastViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cye-4j-Xm6"/>
                         <viewControllerLayoutGuide type="bottom" id="CiP-eo-PLR"/>
@@ -317,11 +318,14 @@
         <!--Navigation Controller-->
         <scene sceneID="9zG-9L-0mo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iax-eu-3SE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="Iax-eu-3SE" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcC-Ef-2K4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -331,6 +335,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78L-gh-3jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ZVL-tV-OFR">
+            <objects>
+                <viewController storyboardIdentifier="search" title="Search" id="Ef7-cA-q1x" customClass="SearchViewController" customModule="AudioWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FpV-pU-4p5"/>
+                        <viewControllerLayoutGuide type="bottom" id="osl-u0-rdL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IZC-FP-7u0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="zXr-2T-sVR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Somewhere TX" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-og-3kh">
+                                <rect key="frame" x="87" y="132" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MRM-kT-jrD"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ef7-cA-q1x" id="BbH-h0-mXc"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XCJ-og-3kh" firstAttribute="centerX" secondItem="IZC-FP-7u0" secondAttribute="centerX" id="CuD-l3-Z0v"/>
+                            <constraint firstItem="osl-u0-rdL" firstAttribute="top" secondItem="zXr-2T-sVR" secondAttribute="bottom" id="J1Z-RY-OXI"/>
+                            <constraint firstItem="zXr-2T-sVR" firstAttribute="leading" secondItem="IZC-FP-7u0" secondAttribute="leading" id="Jks-Kp-uxc"/>
+                            <constraint firstItem="zXr-2T-sVR" firstAttribute="top" secondItem="IZC-FP-7u0" secondAttribute="top" id="Ye8-GQ-7Vb"/>
+                            <constraint firstItem="XCJ-og-3kh" firstAttribute="top" secondItem="FpV-pU-4p5" secondAttribute="bottom" priority="250" constant="112" id="jNG-su-RKT"/>
+                            <constraint firstAttribute="trailing" secondItem="zXr-2T-sVR" secondAttribute="trailing" id="sh0-Dm-olQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchField" destination="XCJ-og-3kh" id="eYC-mS-NQv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wov-zH-0gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="980"/>
         </scene>
     </scenes>
     <resources>

@@ -95,10 +95,16 @@ class WeatherObject: CustomDebugStringConvertible {
         return description
     }
 
-    // TODO: If we really want to be pedantic we can make this a failable initializer.
-    required init(json: JSON) {
+    required init?(json: JSON) {
         
         // Start of relevant JSON
+        if json == JSON.null {
+            return nil
+        }
+        let count = json[WeatherFields.query.rawValue][WeatherFields.count.rawValue].int
+        if count == 0 {
+            return nil
+        }
         var channel = json[WeatherFields.query.rawValue][WeatherFields.results.rawValue][WeatherFields.channel.rawValue]
         
         // Parse units
@@ -112,7 +118,7 @@ class WeatherObject: CustomDebugStringConvertible {
         title = channel[WeatherFields.title.rawValue].string
 
         // Parse city
-        city = channel[LocationFields.city.rawValue].string
+        city = channel[LocationFields.location.rawValue][LocationFields.city.rawValue].string
         
         // Parse wind
         var wind = channel[WindFields.wind.rawValue]

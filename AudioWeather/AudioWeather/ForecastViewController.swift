@@ -32,12 +32,15 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         NotificationCenter.default.removeObserver(self)
     }
 
+    // MARK: Helper methods
     func updateTable() {
         DispatchQueue.main.async {
             let data = WeatherLoader().data
             if data != JSON.null {
-                self.weatherObject = WeatherObject(json: data)
-                self.tableView.reloadData()
+                if let object = WeatherObject(json: data) {
+                    self.weatherObject = object
+                    self.tableView.reloadData()
+                }                
             }
         }
     }

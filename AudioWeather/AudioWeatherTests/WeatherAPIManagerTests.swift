@@ -33,7 +33,10 @@ class WeatherAPIManagerTests: XCTestCase {
             XCTAssert(json != JSON.null, "Failed to retrieve JSON")
             // We depend on the JSON to return a complete set of values.
             let object = WeatherObject(json: json)
-            debugPrint(object)
+            XCTAssertNotNil(object)
+            if let printObject = object {
+                debugPrint(printObject)
+            }
             e.fulfill()
         }
         
