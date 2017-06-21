@@ -8,10 +8,9 @@
 
 import UIKit
 import SwiftyJSON
-import QuartzCore
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var condition: UILabel!
@@ -21,6 +20,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var sunrise: UILabel!
     @IBOutlet weak var sunset: UILabel!
+    @IBOutlet weak var windX: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +90,10 @@ class MainViewController: UIViewController {
         windSpeed.text = String(format: "%.0f %@", object.windSpeed, object.speedUnit)
         sunrise.text = object.sunrise
         sunset.text = object.sunset
+        
+        // Rotate wind vane based on wind speed.
+        // Using a fudge factor of 120 / speed which provides ample visible animation.
+        self.windX.rotate360Degrees(duration: 120 / object.windSpeed)
         
         animateLabelColors()
     }

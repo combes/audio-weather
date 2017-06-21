@@ -209,6 +209,7 @@
                         <outlet property="windChill" destination="kcS-gr-hcr" id="6ji-gi-e2F"/>
                         <outlet property="windDirection" destination="31S-Vj-Uh9" id="Gn4-Kw-bnJ"/>
                         <outlet property="windSpeed" destination="sWf-jP-Sfc" id="gHf-Ic-xdK"/>
+                        <outlet property="windX" destination="9HX-h7-moV" id="bKp-HC-Zu0"/>
                         <segue destination="WhA-sW-0Sb" kind="presentation" identifier="search" id="3jR-iK-6tx"/>
                     </connections>
                 </viewController>
