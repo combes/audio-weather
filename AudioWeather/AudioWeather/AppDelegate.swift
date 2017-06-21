@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var group: DispatchGroup?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -20,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set global appearance of navigation
         UINavigationBar.appearance().barTintColor = UIColor.clear
         UINavigationBar.appearance().tintColor = UIColor.white
+        
+        // Prepare for background fetch
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        // Listen for weather updates for background fetch
+        NotificationCenter.default.addObserver(self, selector: #selector(weatherUpdated), name: .weatherNotification, object: nil)
         
         return true
     }
@@ -48,7 +55,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // Support for background fetch
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        // Use a dispatch group so that we can wait for the data updated notification
+        group = DispatchGroup()
+        group?.enter()
+        
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            WeatherLoader().refresh()
+        }
+        
+        group?.wait()
+        group = nil
+        
+        // Data fetch complete
+        completionHandler(.newData)
+    }
 
-
+    func weatherUpdated() {
+        // Received notification of data update
+        group?.leave()
+    }
 }
 

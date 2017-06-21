@@ -20,6 +20,8 @@
 		8369DC561EF49E9800B494E6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8369DC541EF49E9800B494E6 /* LICENSE */; };
 		8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */; };
 		8369DC5B1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */; };
+		837D00E31EFA2FD300648207 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D00E21EFA2FD300648207 /* NetworkHelper.swift */; };
+		837D00E51EFA300900648207 /* ShowNetworkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837D00E41EFA300900648207 /* ShowNetworkMessage.swift */; };
 		83D33DB31EF88E2A00B44E0B /* WeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */; };
 		83D33DB71EF89D3000B44E0B /* WeatherAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB61EF89D3000B44E0B /* WeatherAPIManagerTests.swift */; };
 		83D33DB91EF89D7000B44E0B /* WeatherLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB81EF89D7000B44E0B /* WeatherLoaderTests.swift */; };
@@ -56,6 +58,8 @@
 		8369DC4A1EF49E6C00B494E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8369DC541EF49E9800B494E6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIManager.swift; sourceTree = "<group>"; };
+		837D00E21EFA2FD300648207 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		837D00E41EFA300900648207 /* ShowNetworkMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowNetworkMessage.swift; sourceTree = "<group>"; };
 		83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoader.swift; sourceTree = "<group>"; };
 		83D33DB61EF89D3000B44E0B /* WeatherAPIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIManagerTests.swift; sourceTree = "<group>"; };
 		83D33DB81EF89D7000B44E0B /* WeatherLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoaderTests.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			children = (
 				8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */,
 				83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */,
+				837D00E21EFA2FD300648207 /* NetworkHelper.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				836221961EF9908B0021EA57 /* ForecastViewController.swift */,
 				836221981EF99E5F0021EA57 /* ForecastTableCell.swift */,
 				8362219A1EF9CBDA0021EA57 /* SearchViewController.swift */,
+				837D00E41EFA300900648207 /* ShowNetworkMessage.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -245,6 +251,11 @@
 					8369DC2F1EF49E6C00B494E6 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					8369DC431EF49E6C00B494E6 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -392,6 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8369DC361EF49E6C00B494E6 /* MainViewController.swift in Sources */,
+				837D00E51EFA300900648207 /* ShowNetworkMessage.swift in Sources */,
+				837D00E31EFA2FD300648207 /* NetworkHelper.swift in Sources */,
 				833AAF031EF5E2980043E507 /* WeatherObject.swift in Sources */,
 				8362219B1EF9CBDA0021EA57 /* SearchViewController.swift in Sources */,
 				836221991EF99E5F0021EA57 /* ForecastTableCell.swift in Sources */,

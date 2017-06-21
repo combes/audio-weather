@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: UI Methods
     // TODO: A View-Model is appropriate here.
     func clearFields() {
         city.text = "--"
@@ -62,6 +63,10 @@ class MainViewController: UIViewController {
         windSpeed.text = "- mph"
         sunrise.text = "-- am"
         sunset.text = "-- pm"
+        
+        if !isInternetAvailable() {
+            showNetworkOutage(view: self.view)
+        }
     }
     
     // TODO: A View-Model is appropriate here.
