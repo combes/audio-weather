@@ -24,23 +24,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        let data = WeatherLoader().data
-        if data == JSON.null {
-            // Clear data fields to indicate data has not been loaded yet.
-            clearFields()
-        } else {
-            // Update data fields with most current data
-            updateFields()
-        }
-        
+
+        // Start refresh immediately
         WeatherLoader().refresh()
         
         let searchItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(showSearch))
         navigationItem.rightBarButtonItem = searchItem
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateFields), name: .weatherNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateFieldsFromNotification), name: .weatherNotification, object: nil)
     }
     
     deinit {
@@ -52,6 +43,12 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        updateFieldsMainThread()
+    }
+    
     // MARK: UI Methods
     // TODO: A View-Model is appropriate here.
     func clearFields() {
@@ -73,6 +70,7 @@ class MainViewController: UIViewController {
     func updateFieldsMainThread() {
         let data = WeatherLoader().data
         guard data != JSON.null else {
+            // Clear data fields to indicate data has not been loaded yet.
             clearFields()
             return
         }
@@ -94,8 +92,6 @@ class MainViewController: UIViewController {
         // Rotate wind vane based on wind speed.
         // Using a fudge factor of 120 / speed which provides ample visible animation.
         self.windX.rotate360Degrees(duration: 120 / object.windSpeed)
-        
-        animateLabelColors()
     }
     
     // MARK: Animations
@@ -117,9 +113,11 @@ class MainViewController: UIViewController {
     }
 
     // MARK: Helper methods
-    func updateFields() {
+    func updateFieldsFromNotification() {
         DispatchQueue.main.async {
             self.updateFieldsMainThread()
+            // Animate labels only when data is refreshed from server
+            self.animateLabelColors()
         }
     }
 }
