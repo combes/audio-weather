@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import QuartzCore
 
 class MainViewController: UIViewController {
 
@@ -84,6 +85,21 @@ class MainViewController: UIViewController {
         windSpeed.text = String(format: "%.0f %@", object.windSpeed, object.speedUnit)
         sunrise.text = object.sunrise
         sunset.text = object.sunset
+        
+        animateLabelColors()
+    }
+    
+    // MARK: Animations
+    func animateLabelColors() {
+        UIView.transition(with: self.view, duration: 1.0, options: UIViewAnimationOptions.transitionCrossDissolve, animations: {
+            self.city.textColor = UIColor.red
+            self.condition.textColor = UIColor.red
+            self.temperature.textColor = UIColor.red
+        }) { (completed) in
+            self.city.textColor = UIColor.white
+            self.condition.textColor = UIColor.white
+            self.temperature.textColor = UIColor.white
+        }
     }
     
     // MARK: Action methods
