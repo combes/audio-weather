@@ -141,16 +141,16 @@
 		8369DC321EF49E6C00B494E6 /* AudioWeather */ = {
 			isa = PBXGroup;
 			children = (
-				830DFF8F1EFAD2BD0057A79C /* Extensions */,
+				83BDB7391EFB2C9F00A17752 /* Storyboards */,
+				83BDB7381EFB2C7200A17752 /* Resources */,
+				83BDB7371EFB2C5400A17752 /* Supporting */,
+				83BDB7351EFB2C1F00A17752 /* Cells */,
 				83D33DB11EF88DE300B44E0B /* Controller */,
+				8369DC531EF49E8300B494E6 /* Documents */,
+				830DFF8F1EFAD2BD0057A79C /* Extensions */,
 				833AAF011EF5E2820043E507 /* Model */,
 				8369DC581EF4A29700B494E6 /* Network */,
-				8369DC531EF49E8300B494E6 /* Documents */,
-				8369DC331EF49E6C00B494E6 /* AppDelegate.swift */,
-				8369DC371EF49E6C00B494E6 /* Main.storyboard */,
-				8369DC3A1EF49E6C00B494E6 /* Assets.xcassets */,
-				8369DC3C1EF49E6C00B494E6 /* LaunchScreen.storyboard */,
-				8369DC3F1EF49E6C00B494E6 /* Info.plist */,
+				83BDB7361EFB2C3500A17752 /* Views */,
 			);
 			path = AudioWeather;
 			sourceTree = "<group>";
@@ -168,8 +168,8 @@
 		8369DC531EF49E8300B494E6 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
-				833AAF051EF5F02B0043E507 /* README.md */,
 				8369DC541EF49E9800B494E6 /* LICENSE */,
+				833AAF051EF5F02B0043E507 /* README.md */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -177,21 +177,61 @@
 		8369DC581EF4A29700B494E6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				837D00E21EFA2FD300648207 /* NetworkHelper.swift */,
 				8369DC591EF4A2BF00B494E6 /* WeatherAPIManager.swift */,
 				83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */,
-				837D00E21EFA2FD300648207 /* NetworkHelper.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		83BDB7351EFB2C1F00A17752 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				836221981EF99E5F0021EA57 /* ForecastTableCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		83BDB7361EFB2C3500A17752 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				837D00E41EFA300900648207 /* ShowNetworkMessage.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		83BDB7371EFB2C5400A17752 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				8369DC331EF49E6C00B494E6 /* AppDelegate.swift */,
+				8369DC3F1EF49E6C00B494E6 /* Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		83BDB7381EFB2C7200A17752 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8369DC3A1EF49E6C00B494E6 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		83BDB7391EFB2C9F00A17752 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8369DC3C1EF49E6C00B494E6 /* LaunchScreen.storyboard */,
+				8369DC371EF49E6C00B494E6 /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		83D33DB11EF88DE300B44E0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8369DC351EF49E6C00B494E6 /* MainViewController.swift */,
 				836221961EF9908B0021EA57 /* ForecastViewController.swift */,
-				836221981EF99E5F0021EA57 /* ForecastTableCell.swift */,
+				8369DC351EF49E6C00B494E6 /* MainViewController.swift */,
 				8362219A1EF9CBDA0021EA57 /* SearchViewController.swift */,
-				837D00E41EFA300900648207 /* ShowNetworkMessage.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
