@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Listen for weather updates for background fetch
         NotificationCenter.default.addObserver(self, selector: #selector(weatherUpdated), name: .weatherNotification, object: nil)
         
+        // Add local notification handling to notify user of new data
+        // TODO: Add onboarding view.
+        let center = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound];
+        center.requestAuthorization(options: options) {
+            (granted, error) in
+            if !granted {
+                print("Something went wrong")
+            }
+        }
         return true
     }
 
@@ -76,6 +87,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func weatherUpdated() {
         // Received notification of data update
+        
+        // Post local notification of weather data updated
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus == .authorized {
+                let content = UNMutableNotificationContent()
+                content.title = "Weather data updated!"
+                content.body = WeatherLoader().location
+                content.sound = UNNotificationSound.default()
+                
+                // Notify user
+                let identifier = "UYLLocalNotification"
+                let request = UNNotificationRequest(identifier: identifier,
+                                                    content: content, trigger: nil)
+                center.add(request, withCompletionHandler: { (error) in
+                    if error != nil {
+                        // Something went wrong
+                    }
+                    center.removeAllPendingNotificationRequests()
+                })
+            }
+        }
         group?.leave()
     }
 }
