@@ -21,12 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-g3-QdV">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC06082" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-g3-QdV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Pu-Jl-hhn" userLabel="Underlay">
-                                <rect key="frame" x="0.0" y="231" width="375" height="436"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZSp-xP-Mu0" userLabel="Conditions">
                                 <rect key="frame" x="114.5" y="62" width="146.5" height="132"/>
@@ -194,15 +190,11 @@
                             <constraint firstAttribute="trailing" secondItem="6PW-g3-QdV" secondAttribute="trailing" id="3zO-Tw-gz8"/>
                             <constraint firstItem="ZSp-xP-Mu0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="250" constant="42" id="BH3-hr-F34"/>
                             <constraint firstItem="xJd-TL-L0A" firstAttribute="top" secondItem="ZSp-xP-Mu0" secondAttribute="bottom" constant="37" id="UC2-AG-XsZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Pu-Jl-hhn" secondAttribute="bottom" id="UbP-J0-1Ia"/>
                             <constraint firstItem="ZSp-xP-Mu0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WSf-db-rlX"/>
                             <constraint firstItem="6PW-g3-QdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aPc-qS-tYt"/>
-                            <constraint firstAttribute="trailing" secondItem="1Pu-Jl-hhn" secondAttribute="trailing" id="acl-xl-Cyi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6PW-g3-QdV" secondAttribute="bottom" id="c5L-yE-aD8"/>
                             <constraint firstItem="6PW-g3-QdV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kB4-Na-Gwq"/>
                             <constraint firstItem="ZSp-xP-Mu0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="rbj-fb-mSD"/>
-                            <constraint firstItem="1Pu-Jl-hhn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yZI-jM-yog"/>
-                            <constraint firstItem="1Pu-Jl-hhn" firstAttribute="top" secondItem="ZSp-xP-Mu0" secondAttribute="bottom" constant="37" id="zEd-cZ-km5"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="mxo-lw-iAd" appends="YES" id="W7g-WL-1jv"/>
@@ -245,7 +237,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="2Ta-dc-aly">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC06082" translatesAutoresizingMaskIntoConstraints="NO" id="2Ta-dc-aly">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncA-Ba-Y2D">
@@ -360,7 +352,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC09280" translatesAutoresizingMaskIntoConstraints="NO" id="zXr-2T-sVR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC06082" translatesAutoresizingMaskIntoConstraints="NO" id="zXr-2T-sVR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-og-3kh">
@@ -418,7 +410,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DSC09280" width="375" height="667"/>
+        <image name="DSC06082" width="375" height="630"/>
         <image name="Sunrise" width="109" height="55"/>
         <image name="Sunset" width="109" height="54"/>
         <image name="Wind-Base" width="3" height="102"/>
