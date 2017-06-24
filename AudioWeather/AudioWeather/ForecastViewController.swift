@@ -59,7 +59,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ForecastTableCell
         
         if let forecast = weatherObject?.forecast[indexPath.row] {
-            cell.configure(forecast: forecast)
+            cell.configure(withDelegate: ForecastViewModel(model: forecast, temperatureUnits: (weatherObject?.temperatureUnit)!))
         }
         
         return cell

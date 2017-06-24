@@ -8,35 +8,6 @@
 
 import SwiftyJSON
 
-class ForecastObject: CustomDebugStringConvertible {
-    var code = 0
-    var date: Date!
-    var day: String!
-    var high: String!
-    var low: String!
-    var text: String!
-    
-    var debugDescription: String {
-        var description = ""
-        if let dateValue = date, let dayValue = day, let textValue = text {
-            description = "Day: \(dayValue), code: \(code), date: \(dateValue.description), high: \(high), low: \(low), text: \(textValue)\n"
-        }
-        return description
-    }
-    
-    required init(json: JSON) {
-        if let codeText = json[ForecastFields.code.rawValue].string {
-            code = Int(codeText) ?? 0
-        }
-        // TODO: date = json[ForecastFields.date.rawValue]
-        date = Date()
-        day = json[ForecastFields.day.rawValue].string
-        high = json[ForecastFields.high.rawValue].string
-        low = json[ForecastFields.low.rawValue].string
-        text = json[ForecastFields.text.rawValue].string
-    }
-}
-
 class WeatherObject: CustomDebugStringConvertible {
     
     // Title
