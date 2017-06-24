@@ -14,5 +14,5 @@ protocol ForecastModelProtocol {
     var day: String { get }
     var high: String { get }
     var low: String { get }
-    var conditionText: String { get }
+    var condition: String { get }
 }

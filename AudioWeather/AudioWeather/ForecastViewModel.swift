@@ -23,7 +23,7 @@ class ForecastViewModel: ForecastModelProtocol {
             return formattedTemperature(lowText)
         }
     }
-    var conditionText: String
+    var condition: String
     
     // Helper properties
     let temperatureUnits: String
@@ -38,7 +38,7 @@ class ForecastViewModel: ForecastModelProtocol {
         day = model.day
         highText = model.high
         lowText = model.low
-        conditionText = model.conditionText
+        condition = model.condition
         self.temperatureUnits = temperatureUnits ?? "?"
     }
     

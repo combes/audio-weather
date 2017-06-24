@@ -11,13 +11,13 @@ import SwiftyJSON
 class ForecastObject: ForecastModelProtocol, CustomDebugStringConvertible {
     var code = 0
     var date = Date()
-    var day: String
-    var high: String
-    var low: String
-    var conditionText: String
+    var day = "-"
+    var high = "-"
+    var low = "-"
+    var condition = "-"
     
     var debugDescription: String {
-        let description = "Day: \(day), code: \(code), date: \(date.description), high: \(high), low: \(low), text: \(conditionText)\n"
+        let description = "Day: \(day), code: \(code), date: \(date.description), high: \(high), low: \(low), text: \(condition)\n"
         return description
     }
     
@@ -26,9 +26,17 @@ class ForecastObject: ForecastModelProtocol, CustomDebugStringConvertible {
             code = Int(codeText) ?? 0
         }
         // TODO: date = json[ForecastFields.date.rawValue]
-        day = json[ForecastFields.day.rawValue].string ?? "-"
-        high = json[ForecastFields.high.rawValue].string ?? "-"
-        low = json[ForecastFields.low.rawValue].string ?? "-"
-        conditionText = json[ForecastFields.text.rawValue].string ?? "-"
+        if let dayText = json[ForecastFields.day.rawValue].string {
+            day = dayText
+        }
+        if let highText = json[ForecastFields.high.rawValue].string {
+            high = highText
+        }
+        if let lowText = json[ForecastFields.low.rawValue].string {
+            low = lowText
+        }
+        if let conditionText = json[ForecastFields.text.rawValue].string {
+            condition = conditionText
+        }
     }
 }

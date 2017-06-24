@@ -20,6 +20,6 @@ class ForecastTableCell: UITableViewCell {
         day.text = delegate.day
         high.text = delegate.high
         low.text = delegate.low
-        condition.text = delegate.conditionText
+        condition.text = delegate.condition
     }
 }
