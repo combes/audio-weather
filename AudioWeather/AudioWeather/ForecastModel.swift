@@ -1,5 +1,5 @@
 //
-//  ForecastObject.swift
+//  ForecastModel.swift
 //  AudioWeather
 //
 //  Created by Christopher Combes on 6/23/17.
@@ -8,7 +8,7 @@
 
 import SwiftyJSON
 
-class ForecastObject: ForecastModelProtocol, CustomDebugStringConvertible {
+class ForecastModel: ForecastModelProtocol, CustomDebugStringConvertible {
     var code = 0
     var date = Date()
     var day = "-"

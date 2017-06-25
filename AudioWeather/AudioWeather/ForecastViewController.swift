@@ -13,7 +13,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    var weatherObject: WeatherObject?
+    var weatherObject: WeatherModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +31,14 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     // MARK: Helper methods
     func updateTable() {
         DispatchQueue.main.async {
             let data = WeatherLoader().data
             if data != JSON.null {
-                if let object = WeatherObject(json: data) {
-                    self.weatherObject = object
-                    self.tableView.reloadData()
-                }                
+                self.weatherObject = WeatherModel(json: data)
+                self.tableView.reloadData()
             }
         }
     }
@@ -59,7 +57,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ForecastTableCell
         
         if let forecast = weatherObject?.forecast[indexPath.row] {
-            cell.configure(withDelegate: ForecastViewModel(model: forecast, temperatureUnits: (weatherObject?.temperatureUnit)!))
+            cell.configure(withDelegate: ForecastViewModel(model: forecast))
         }
         
         return cell

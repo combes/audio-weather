@@ -15,35 +15,26 @@ class ForecastViewModel: ForecastModelProtocol {
     var day: String
     var high: String {
         get {
-            return formattedTemperature(highText)
+            return UnitsViewModel.formattedTemperature(highText)
         }
     }
     var low: String {
         get {
-            return formattedTemperature(lowText)
+            return UnitsViewModel.formattedTemperature(lowText)
         }
     }
     var condition: String
-    
-    // Helper properties
-    let temperatureUnits: String
     
     // Private properties
     private let highText: String
     private let lowText: String
 
-    init(model: ForecastObject, temperatureUnits: String?) {
+    init(model: ForecastModel) {
         code = model.code
         date = model.date
         day = model.day
         highText = model.high
         lowText = model.low
         condition = model.condition
-        self.temperatureUnits = temperatureUnits ?? "?"
-    }
-    
-    // MARK: Helper methods
-    func formattedTemperature(_ text: String) -> String {
-        return String(format: "%@°%@", text, temperatureUnits)
     }
 }

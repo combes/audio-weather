@@ -61,37 +61,36 @@ class MainViewController: UIViewController {
         sunrise.text = "-- am"
         sunset.text = "-- pm"
         
-        if !isInternetAvailable() {
-            showNetworkOutage(view: self.view)
+    }
+    
+    func updateFieldsWith(model: WeatherModel) {
+        let viewModel = WeatherViewModel(model: model)
+        city.text = viewModel.city
+        condition.text = viewModel.conditionText
+        temperature.text = viewModel.temperature
+        windDirection.text = viewModel.windDirection
+        windChill.text = viewModel.windChill
+        windSpeed.text = viewModel.windSpeed
+        sunrise.text = viewModel.sunrise
+        sunset.text = viewModel.sunset
+
+        // Rotate wind vane based on wind speed.
+        // Using a fudge factor of 120 / speed which provides ample visible animation.
+        if let speedValue = Double(model.windSpeed) {
+            self.windX.rotate360Degrees(duration: 120 / speedValue)
         }
     }
     
     // TODO: A View-Model is appropriate here.
     func updateFieldsMainThread() {
+        
+        if !isInternetAvailable() {
+            showNetworkOutage(view: self.view)
+        }
+
         let data = WeatherLoader().data
-        guard data != JSON.null else {
-            // Clear data fields to indicate data has not been loaded yet.
-            clearFields()
-            return
-        }
-        
-        guard let object = WeatherObject(json: data) else {
-            clearFields()
-            return
-        }
-        
-        city.text = object.city
-        condition.text = object.conditionText
-        temperature.text = String(format: "%@°%@", object.temperature, object.temperatureUnit)
-        windDirection.text = String(format: "%@°", object.windDirection)
-        windChill.text = String(format: "%@°%@", object.windChill, object.temperatureUnit)
-        windSpeed.text = String(format: "%.0f %@", object.windSpeed, object.speedUnit)
-        sunrise.text = object.sunrise
-        sunset.text = object.sunset
-        
-        // Rotate wind vane based on wind speed.
-        // Using a fudge factor of 120 / speed which provides ample visible animation.
-        self.windX.rotate360Degrees(duration: 120 / object.windSpeed)
+        let model = WeatherModel(json: data)
+        updateFieldsWith(model: model)
     }
     
     // MARK: Animations
