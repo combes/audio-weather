@@ -37,6 +37,9 @@
 		83C215521F00783900ADB24F /* WeatherModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215501F00783900ADB24F /* WeatherModelProtocol.swift */; };
 		83C215541F00794B00ADB24F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215531F00794B00ADB24F /* WeatherViewModel.swift */; };
 		83C215551F00794B00ADB24F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215531F00794B00ADB24F /* WeatherViewModel.swift */; };
+		83C215571F008BAD00ADB24F /* String+CompassDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215561F008BAD00ADB24F /* String+CompassDirection.swift */; };
+		83C215581F008BAD00ADB24F /* String+CompassDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215561F008BAD00ADB24F /* String+CompassDirection.swift */; };
+		83C2155A1F008EEC00ADB24F /* CompassDirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C215591F008EEC00ADB24F /* CompassDirectionTests.swift */; };
 		83D33DB31EF88E2A00B44E0B /* WeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */; };
 		83D33DB71EF89D3000B44E0B /* WeatherAPIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB61EF89D3000B44E0B /* WeatherAPIManagerTests.swift */; };
 		83D33DB91EF89D7000B44E0B /* WeatherLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D33DB81EF89D7000B44E0B /* WeatherLoaderTests.swift */; };
@@ -83,6 +86,8 @@
 		83C2154B1F00759000ADB24F /* UnitsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsViewModel.swift; sourceTree = "<group>"; };
 		83C215501F00783900ADB24F /* WeatherModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModelProtocol.swift; sourceTree = "<group>"; };
 		83C215531F00794B00ADB24F /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		83C215561F008BAD00ADB24F /* String+CompassDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CompassDirection.swift"; sourceTree = "<group>"; };
+		83C215591F008EEC00ADB24F /* CompassDirectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassDirectionTests.swift; sourceTree = "<group>"; };
 		83D33DB21EF88E2A00B44E0B /* WeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoader.swift; sourceTree = "<group>"; };
 		83D33DB61EF89D3000B44E0B /* WeatherAPIManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIManagerTests.swift; sourceTree = "<group>"; };
 		83D33DB81EF89D7000B44E0B /* WeatherLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoaderTests.swift; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */,
+				83C215561F008BAD00ADB24F /* String+CompassDirection.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 		8369DC471EF49E6C00B494E6 /* AudioWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				83C215591F008EEC00ADB24F /* CompassDirectionTests.swift */,
 				83D33DB61EF89D3000B44E0B /* WeatherAPIManagerTests.swift */,
 				83D33DB81EF89D7000B44E0B /* WeatherLoaderTests.swift */,
 				8369DC4A1EF49E6C00B494E6 /* Info.plist */,
@@ -492,6 +499,7 @@
 				835CEED81EFDE5B6001AB8FB /* ForecastViewModel.swift in Sources */,
 				83D33DB31EF88E2A00B44E0B /* WeatherLoader.swift in Sources */,
 				835CEEDA1EFDE667001AB8FB /* ForecastModel.swift in Sources */,
+				83C215571F008BAD00ADB24F /* String+CompassDirection.swift in Sources */,
 				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				83C2154A1F00747100ADB24F /* UnitsModel.swift in Sources */,
 				830DFF911EFAD2CC0057A79C /* UIView+rotate360Degrees.swift in Sources */,
@@ -508,6 +516,7 @@
 			files = (
 				8369DC5B1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				83D33DB91EF89D7000B44E0B /* WeatherLoaderTests.swift in Sources */,
+				83C2155A1F008EEC00ADB24F /* CompassDirectionTests.swift in Sources */,
 				835CEEDE1EFDEF4A001AB8FB /* ForecastModelProtocol.swift in Sources */,
 				83C2154D1F00774900ADB24F /* UnitsModel.swift in Sources */,
 				83C215521F00783900ADB24F /* WeatherModelProtocol.swift in Sources */,
@@ -515,6 +524,7 @@
 				83C215551F00794B00ADB24F /* WeatherViewModel.swift in Sources */,
 				835CEEDB1EFDE667001AB8FB /* ForecastModel.swift in Sources */,
 				83C2154E1F00777900ADB24F /* ForecastViewModel.swift in Sources */,
+				83C215581F008BAD00ADB24F /* String+CompassDirection.swift in Sources */,
 				833AAF041EF5E2980043E507 /* WeatherModel.swift in Sources */,
 				83D33DB71EF89D3000B44E0B /* WeatherAPIManagerTests.swift in Sources */,
 			);

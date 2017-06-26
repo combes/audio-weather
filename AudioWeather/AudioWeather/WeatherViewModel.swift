@@ -27,7 +27,7 @@ class WeatherViewModel: WeatherModelProtocol {
     }
     var windDirection: String {
         get {
-            return (windDirectionText.characters.count == 0 ? UnitsViewModel.formattedDirection("-") : UnitsViewModel.formattedDirection(windDirectionText))
+            return windDirectionText.compassDirection()
         }
     }
     var windChill: String {

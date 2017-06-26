@@ -12,9 +12,6 @@ class UnitsViewModel {
     static func formattedTemperature(_ text: String) -> String {
         return String(format: "%@°%@", text, UnitsModel.temperatureUnit)
     }
-    static func formattedDirection(_ text: String) -> String {
-        return String(format: "%@°", text)
-    }
     static func formattedSpeed(_ text: String) -> String {
         return String(format: "%@ %@", text, UnitsModel.speedUnit)
     }
