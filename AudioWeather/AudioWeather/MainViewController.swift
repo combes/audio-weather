@@ -49,20 +49,6 @@ class MainViewController: UIViewController {
         updateFieldsMainThread()
     }
     
-    // MARK: UI Methods
-    // TODO: A View-Model is appropriate here.
-    func clearFields() {
-        city.text = "--"
-        condition.text = "--"
-        temperature.text = "-°F"
-        windDirection.text = "-°"
-        windChill.text = "-°"
-        windSpeed.text = "- mph"
-        sunrise.text = "-- am"
-        sunset.text = "-- pm"
-        
-    }
-    
     func updateFieldsWith(model: WeatherModel) {
         let viewModel = WeatherViewModel(model: model)
         city.text = viewModel.city
@@ -81,7 +67,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    // TODO: A View-Model is appropriate here.
     func updateFieldsMainThread() {
         
         if !isInternetAvailable() {
