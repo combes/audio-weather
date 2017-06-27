@@ -6,6 +6,7 @@
 //  Copyright © 2017 Christopher Combes. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 import SwiftyJSON
 
@@ -82,6 +83,8 @@ class MainViewController: UIViewController {
         let data = WeatherLoader().data
         let model = WeatherModel(json: data)
         updateFieldsWith(model: model)
+        
+        WeatherVoice.shared.speakWeather(model)
     }
     
     // MARK: Animations
