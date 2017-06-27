@@ -1,0 +1,149 @@
+{
+    "query": {
+        "count": 1,
+        "created": "2017-06-26T23:34:24Z",
+        "lang": "en-US",
+        "results": {
+            "channel": {
+                "units": {
+                    "distance": "mi",
+                    "pressure": "in",
+                    "speed": "mph",
+                    "temperature": "F"
+                },
+                "title": "Yahoo! Weather - Sydney, NSW, AU",
+                "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-1105779/",
+                "description": "Yahoo! Weather for Sydney, NSW, AU",
+                "language": "en-us",
+                "lastBuildDate": "Tue, 27 Jun 2017 09:34 AM AEST",
+                "ttl": "60",
+                "location": {
+                    "city": "Sydney",
+                    "country": "Australia",
+                    "region": " NSW"
+                },
+                "wind": {
+                    "chill": "50",
+                    "direction": "270",
+                    "speed": "4"
+                },
+                "atmosphere": {
+                    "humidity": "80",
+                    "pressure": "1022.0",
+                    "rising": "0",
+                    "visibility": "16.1"
+                },
+                "astronomy": {
+                    "sunrise": "7:2 am",
+                    "sunset": "4:56 pm"
+                },
+                "image": {
+                    "title": "Yahoo! Weather",
+                    "width": "142",
+                    "height": "18",
+                    "link": "http://weather.yahoo.com",
+                    "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+                },
+                "item": {
+                    "title": "Conditions for Sydney, NSW, AU at 09:00 AM AEST",
+                    "lat": "-33.856281",
+                    "long": "151.020966",
+                    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-1105779/",
+                    "pubDate": "Tue, 27 Jun 2017 09:00 AM AEST",
+                    "condition": {
+                        "code": "28",
+                        "date": "Tue, 27 Jun 2017 09:00 AM AEST",
+                        "temp": "50",
+                        "text": "Mostly Cloudy"
+                    },
+                    "forecast": [
+                                 {
+                                 "code": "28",
+                                 "date": "27 Jun 2017",
+                                 "day": "Tue",
+                                 "high": "60",
+                                 "low": "40",
+                                 "text": "Mostly Cloudy"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "28 Jun 2017",
+                                 "day": "Wed",
+                                 "high": "62",
+                                 "low": "47",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "32",
+                                 "date": "29 Jun 2017",
+                                 "day": "Thu",
+                                 "high": "61",
+                                 "low": "44",
+                                 "text": "Sunny"
+                                 },
+                                 {
+                                 "code": "32",
+                                 "date": "30 Jun 2017",
+                                 "day": "Fri",
+                                 "high": "56",
+                                 "low": "43",
+                                 "text": "Sunny"
+                                 },
+                                 {
+                                 "code": "34",
+                                 "date": "01 Jul 2017",
+                                 "day": "Sat",
+                                 "high": "59",
+                                 "low": "41",
+                                 "text": "Mostly Sunny"
+                                 },
+                                 {
+                                 "code": "34",
+                                 "date": "02 Jul 2017",
+                                 "day": "Sun",
+                                 "high": "59",
+                                 "low": "40",
+                                 "text": "Mostly Sunny"
+                                 },
+                                 {
+                                 "code": "30",
+                                 "date": "03 Jul 2017",
+                                 "day": "Mon",
+                                 "high": "61",
+                                 "low": "46",
+                                 "text": "Partly Cloudy"
+                                 },
+                                 {
+                                 "code": "32",
+                                 "date": "04 Jul 2017",
+                                 "day": "Tue",
+                                 "high": "56",
+                                 "low": "43",
+                                 "text": "Sunny"
+                                 },
+                                 {
+                                 "code": "32",
+                                 "date": "05 Jul 2017",
+                                 "day": "Wed",
+                                 "high": "59",
+                                 "low": "39",
+                                 "text": "Sunny"
+                                 },
+                                 {
+                                 "code": "32",
+                                 "date": "06 Jul 2017",
+                                 "day": "Thu",
+                                 "high": "57",
+                                 "low": "41",
+                                 "text": "Sunny"
+                                 }
+                                 ],
+                    "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/28.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Mostly Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Tue - Mostly Cloudy. High: 60Low: 40\n<BR /> Wed - Partly Cloudy. High: 62Low: 47\n<BR /> Thu - Sunny. High: 61Low: 44\n<BR /> Fri - Sunny. High: 56Low: 43\n<BR /> Sat - Mostly Sunny. High: 59Low: 41\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-1105779/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+                    "guid": {
+                        "isPermaLink": "false"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ class WeatherModel: WeatherModelProtocol, CustomDebugStringConvertible {
     
     // Condition
     var code = 0
-    var date = Date()
+    var date = ""
     var temperature = ""
     var conditionText = ""
     
@@ -88,17 +88,50 @@ class WeatherModel: WeatherModelProtocol, CustomDebugStringConvertible {
         if let codeText = condition[ConditionFields.code.rawValue].string {
             code = Int(codeText) ?? 0
         }
-        // TODO: date = condition[ConditionFields.date.rawValue]
-        date = Date()
+        
+        date = condition[ConditionFields.date.rawValue].string ?? ""        
         temperature = condition[ConditionFields.temperature.rawValue].string  ?? ""
         conditionText = condition[ConditionFields.text.rawValue].string  ?? ""
-                    
-
+        
         // Parse forecast
         let forecastDays = item[ForecastFields.forecast.rawValue]
         for (_, day):(String, JSON) in forecastDays {
             forecast.append(ForecastModel(json: day))
         }
+    }
+    
+    // MARK: Helper methods
+    func hourUsingWeatherFormat(dateText: String) -> Int {
+        var hour = 0
         
+        var textComponents = dateText.components(separatedBy: " ")
+        textComponents.removeLast()
+        let newText = textComponents.joined(separator: " ")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, d MMM yyyy hh:mm a"
+        
+        if let checkDate = dateFormatter.date(from: newText) {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let components = calendar?.components(NSCalendar.Unit.hour, from: checkDate)
+            hour = components?.hour ?? 0
+        }
+        
+        return hour
+    }
+    
+    func hourUsingTimeFormat(timeText: String) -> Int {
+        var hour = 0
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        
+        if let checkDate = dateFormatter.date(from: timeText) {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let components = calendar?.components(NSCalendar.Unit.hour, from: checkDate)
+            hour = components?.hour ?? 0
+        }
+        
+        return hour
     }
 }

@@ -50,6 +50,7 @@ class WeatherViewModel: WeatherModelProtocol {
             return sunsetText.characters.count == 0 ? "-- pm" : sunsetText
         }
     }
+    var date: String
     
     // Private properties
     private var cityText: String
@@ -70,5 +71,28 @@ class WeatherViewModel: WeatherModelProtocol {
         windSpeedText = model.windSpeed
         sunriseText = model.sunrise
         sunsetText = model.sunset
+        date = model.date
+    }
+    
+    /// Derive background image based on sunrise, day, sunset, night
+    ///
+    /// - Returns: Image name based on current time
+    static func backgroundImageName(sunriseHour: Int, sunsetHour: Int, currentHour: Int) -> String {
+        // TODO:
+//        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+//        let components = calendar?.components(NSCalendar.Unit.hour, from: date)
+//        if let hour = components?.hour {
+//            if hour > 5 && hour < 8 {
+//                return "background-sunrise"
+//            }
+//            if hour > 17 && hour < 20 {
+//                return "background-sunset"
+//            }
+//            if hour >= 8 && hour <= 17 {
+//                return "background-day"
+//            }
+//        }
+//        
+        return "background-evening"
     }
 }
