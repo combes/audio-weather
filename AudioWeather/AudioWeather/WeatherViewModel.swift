@@ -6,7 +6,7 @@
 //  Copyright © 2017 Christopher Combes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WeatherViewModel: WeatherModelProtocol {
     // Protocol proprerties
@@ -74,25 +74,61 @@ class WeatherViewModel: WeatherModelProtocol {
         date = model.date
     }
     
+    func backgroundImage() -> UIImage {
+        return backgroundImage(sunriseHour: hourUsingTimeFormat(timeText: sunrise),
+                               sunsetHour: hourUsingTimeFormat(timeText: sunset),
+                               currentHour: hourUsingWeatherFormat(dateText: date))
+    }
+    
     /// Derive background image based on sunrise, day, sunset, night
     ///
     /// - Returns: Image name based on current time
-    static func backgroundImageName(sunriseHour: Int, sunsetHour: Int, currentHour: Int) -> String {
-        // TODO:
-//        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-//        let components = calendar?.components(NSCalendar.Unit.hour, from: date)
-//        if let hour = components?.hour {
-//            if hour > 5 && hour < 8 {
-//                return "background-sunrise"
-//            }
-//            if hour > 17 && hour < 20 {
-//                return "background-sunset"
-//            }
-//            if hour >= 8 && hour <= 17 {
-//                return "background-day"
-//            }
-//        }
-//        
-        return "background-evening"
+    func backgroundImage(sunriseHour: Int, sunsetHour: Int, currentHour: Int) -> UIImage {
+        if (abs(sunriseHour - currentHour) <= 1) {
+            return #imageLiteral(resourceName: "background-sunrise")
+        }
+        if (abs(sunsetHour - currentHour) <= 1) {
+            return #imageLiteral(resourceName: "background-sunset")
+        }
+        if (currentHour > sunriseHour && currentHour < sunsetHour) {
+            return #imageLiteral(resourceName: "background-day")
+        }
+
+        return #imageLiteral(resourceName: "background-evening")
+    }
+    
+    // MARK: Helper methods
+    func hourUsingWeatherFormat(dateText: String) -> Int {
+        var hour = 0
+        
+        var textComponents = dateText.components(separatedBy: " ")
+        textComponents.removeLast()
+        let newText = textComponents.joined(separator: " ")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, d MMM yyyy hh:mm a"
+        
+        if let checkDate = dateFormatter.date(from: newText) {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let components = calendar?.components(NSCalendar.Unit.hour, from: checkDate)
+            hour = components?.hour ?? 0
+        }
+        
+        return hour
+    }
+    
+    func hourUsingTimeFormat(timeText: String) -> Int {
+        var hour = 0
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        
+        if let checkDate = dateFormatter.date(from: timeText) {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let components = calendar?.components(NSCalendar.Unit.hour, from: checkDate)
+            hour = components?.hour ?? 0
+        }
+        
+        return hour
     }
 }

@@ -59,10 +59,9 @@ class MainViewController: UIViewController {
         windChill.text = viewModel.windChill
         windSpeed.text = viewModel.windSpeed
         sunrise.text = viewModel.sunrise
-        sunset.text = viewModel.sunset
+        sunset.text = viewModel.sunset        
 
-        // TODO:
-        //locationBackground.image = UIImage(named: WeatherViewModel.backgroundImageName(date: viewModel.date))
+        locationBackground.image = viewModel.backgroundImage()
         
         // Rotate wind vane based on wind speed.
         // Using a fudge factor of 120 / speed which provides ample visible animation.

@@ -11,7 +11,8 @@ import SwiftyJSON
 
 class ForecastViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!    
+    @IBOutlet weak var locationBackground: UIImageView!
     
     var weatherObject: WeatherModel?
     
@@ -38,6 +39,10 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
             let data = WeatherLoader().data
             if data != JSON.null {
                 self.weatherObject = WeatherModel(json: data)
+                if let object = self.weatherObject {
+                    let viewModel = WeatherViewModel(model: object)
+                    self.locationBackground.image = viewModel.backgroundImage()
+                }
                 self.tableView.reloadData()
             }
         }
