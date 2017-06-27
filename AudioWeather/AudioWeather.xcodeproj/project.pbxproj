@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		482314DC1F03049400F484A0 /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482314DB1F03049400F484A0 /* WeatherViewModelTests.swift */; };
+		482314FC1F031B9200F484A0 /* UINavigationController+transparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482314FB1F031B9200F484A0 /* UINavigationController+transparent.swift */; };
 		830DFF911EFAD2CC0057A79C /* UIView+rotate360Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */; };
 		833AAF031EF5E2980043E507 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherModel.swift */; };
 		833AAF041EF5E2980043E507 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherModel.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		445CF3D9F462EED27A2DC50F /* Pods_AudioWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482314DB1F03049400F484A0 /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
+		482314FB1F031B9200F484A0 /* UINavigationController+transparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+transparent.swift"; sourceTree = "<group>"; };
 		6ABD526DC97F0E76A118FCA1 /* Pods-AudioWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.release.xcconfig"; sourceTree = "<group>"; };
 		830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+rotate360Degrees.swift"; sourceTree = "<group>"; };
 		833AAF021EF5E2980043E507 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */,
 				83C215561F008BAD00ADB24F /* String+CompassDirection.swift */,
+				482314FB1F031B9200F484A0 /* UINavigationController+transparent.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				836221991EF99E5F0021EA57 /* ForecastTableCell.swift in Sources */,
 				835CEED81EFDE5B6001AB8FB /* ForecastViewModel.swift in Sources */,
 				83D33DB31EF88E2A00B44E0B /* WeatherLoader.swift in Sources */,
+				482314FC1F031B9200F484A0 /* UINavigationController+transparent.swift in Sources */,
 				835CEEDA1EFDE667001AB8FB /* ForecastModel.swift in Sources */,
 				83C215571F008BAD00ADB24F /* String+CompassDirection.swift in Sources */,
 				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,

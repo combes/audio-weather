@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ForecastViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var locationBackground: UIImageView!
     
     var weatherObject: WeatherModel?
@@ -19,7 +19,8 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isHidden = false
+        // Set navigation bar to transparent
+        navigationController?.makeTransparent()
         
         tableView.layer.backgroundColor = UIColor.clear.cgColor
         tableView.backgroundColor = UIColor.clear
@@ -28,7 +29,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: .weatherNotification, object: nil)
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

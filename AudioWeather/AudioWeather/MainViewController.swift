@@ -28,7 +28,10 @@ class MainViewController: UIViewController {
 
         // Start refresh immediately
         WeatherLoader().refresh()
-        
+
+        // Set navigation bar to transparent
+        navigationController?.makeTransparent()
+
         let searchItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: #selector(showSearch))
         navigationItem.rightBarButtonItem = searchItem
         

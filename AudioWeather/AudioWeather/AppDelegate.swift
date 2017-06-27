@@ -20,9 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Set global appearance of navigation
-        UINavigationBar.appearance().barTintColor = UIColor.clear
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: UIControlState.normal)
         UINavigationBar.appearance().tintColor = UIColor.white
-        
+
         // Prepare for background fetch
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         

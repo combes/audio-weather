@@ -15,6 +15,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set navigation bar to transparent
+        navigationController?.makeTransparent()
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(dismissView))
         
         searchField.becomeFirstResponder()
