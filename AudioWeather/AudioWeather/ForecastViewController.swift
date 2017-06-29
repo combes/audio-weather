@@ -43,6 +43,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
                 if let object = self.weatherObject {
                     let viewModel = WeatherViewModel(model: object)
                     self.locationBackground.image = viewModel.backgroundImage()
+                    WeatherVoice.shared.speakForecast(object)
                 }
                 self.tableView.reloadData()
             }

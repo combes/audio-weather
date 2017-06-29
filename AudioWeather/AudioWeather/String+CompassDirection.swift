@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    func compassDirection() -> String {
+    func compassDirection(fullDescription: Bool = false) -> String {
         var direction = "?"
         
         // Must have a type Double to work with
@@ -38,37 +38,37 @@ extension String {
          NNW    326.25 - 348.75
          */
         if value >= 348.75 || (value >= 0 && value <= 11.25) {
-            direction = "N"
+            direction = fullDescription ? "North" : "N"
         } else if value >= 11.25 && value <= 33.75 {
-            direction = "NNE"
+            direction = fullDescription ? "North Northeast" : "NNE"
         } else if value >= 33.75 && value <= 56.25 {
-            direction = "NE"
+            direction = fullDescription ? "Northeast" : "NE"
         } else if value >= 56.25 && value <= 78.75 {
-            direction = "ENE"
+            direction = fullDescription ? "East Northeast" : "ENE"
         } else if value >= 78.75 && value <= 101.25 {
-            direction = "E"
+            direction = fullDescription ? "East" : "E"
         } else if value >= 101.25 && value <= 123.75 {
-            direction = "ESE"
+            direction = fullDescription ? "East Southeast" : "ESE"
         } else if value >= 123.75 && value <= 146.25 {
-            direction = "SE"
+            direction = fullDescription ? "Southeast" : "SE"
         } else if value >= 146.25 && value <= 168.75 {
-            direction = "SSE"
+            direction = fullDescription ? "South Southest" : "SSE"
         } else if value >= 168.75 && value <= 191.25 {
-            direction = "S"
+            direction = fullDescription ? "South" : "S"
         } else if value >= 191.25 && value <= 213.75 {
-            direction = "SSW"
+            direction = fullDescription ? "South Southwest" : "SSW"
         } else if value >= 213.75 && value <= 236.25 {
-            direction = "SW"
+            direction = fullDescription ? "Southwest" : "SW"
         } else if value >= 236.25 && value <= 258.75 {
-            direction = "WSW"
+            direction = fullDescription ? "West Southwest" : "WSW"
         } else if value >= 258.75 && value <= 281.25 {
-            direction = "W"
+            direction = fullDescription ? "West" : "W"
         } else if value >= 281.25 && value <= 303.75 {
-            direction = "WNW"
+            direction = fullDescription ? "West Northwest" : "WNW"
         } else if value >= 303.75 && value <= 326.25 {
-            direction = "NW"
+            direction = fullDescription ? "Northwest" : "NW"
         } else if value >= 326.25 && value <= 348.75 {
-            direction = "NNW"
+            direction = fullDescription ? "North Northwest" : "NNW"
         }
         
         return direction
