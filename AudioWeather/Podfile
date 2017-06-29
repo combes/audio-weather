@@ -9,6 +9,7 @@ inhibit_all_warnings!
 def shared_pods
 pod "SwiftyJSON"
 pod 'SwiftMessages'
+pod 'RevealingSplashView'
 end
 
 target 'AudioWeather' do

@@ -1,15 +1,18 @@
 PODS:
+  - RevealingSplashView (0.2.0)
   - SwiftMessages (3.3.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - RevealingSplashView
   - SwiftMessages
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  RevealingSplashView: a19962358db66188841c73afd51eb663a29f75cd
   SwiftMessages: 09cea3336e3fb63c3578983c8aac65acaa6d884a
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 89dced1c76071a36e98c38fd21830bf891d77e18
+PODFILE CHECKSUM: b5f2c2719eea9129d994681f8c9edaea805cbdfa
 
 COCOAPODS: 1.2.0

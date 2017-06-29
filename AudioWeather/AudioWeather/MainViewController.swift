@@ -9,6 +9,7 @@
 import AVFoundation
 import UIKit
 import SwiftyJSON
+import RevealingSplashView
 
 class MainViewController: UIViewController {
     
@@ -37,6 +38,20 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = searchItem
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateFieldsFromNotification), name: .weatherNotification, object: nil)
+        
+        // Show splash view for snazzyness
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "storm")!, iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor.white)
+        
+        self.view.addSubview(revealingSplashView)
+        
+        revealingSplashView.duration = 1.9
+        revealingSplashView.useCustomIconColor = false
+        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
+        
+        revealingSplashView.startAnimation(){
+            self.setNeedsStatusBarAppearanceUpdate()
+            print("Completed")
+        }
     }
     
     deinit {
