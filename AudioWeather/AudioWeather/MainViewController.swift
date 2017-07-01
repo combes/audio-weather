@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
         
         self.view.addSubview(revealingSplashView)
         
-        revealingSplashView.duration = 1.9
+        revealingSplashView.duration = 0.9
         revealingSplashView.useCustomIconColor = false
         revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
         
@@ -99,7 +99,9 @@ class MainViewController: UIViewController {
         let model = WeatherModel(json: data)
         updateFieldsWith(model: model)
         
-        WeatherVoice.shared.speakWeather(model)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            WeatherVoice.shared.speakWeather(model)
+        }
     }
     
     // MARK: Animations

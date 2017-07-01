@@ -14,7 +14,7 @@ class WeatherVoice {
 
     func speakWeather(_ weatherModel : WeatherModel) {
         
-        var speechText = ". The current weather for "
+        var speechText = "The current weather for "
         
         // Build text based on conditions
         speechText += weatherModel.city + ". "
