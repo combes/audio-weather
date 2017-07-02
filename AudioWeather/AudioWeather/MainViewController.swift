@@ -99,7 +99,7 @@ class MainViewController: UIViewController {
         let model = WeatherModel(json: data)
         updateFieldsWith(model: model)
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
             WeatherVoice.shared.speakWeather(model)
         }
     }
