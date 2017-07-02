@@ -11,6 +11,7 @@
 		482314FC1F031B9200F484A0 /* UINavigationController+transparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482314FB1F031B9200F484A0 /* UINavigationController+transparent.swift */; };
 		482314FF1F031EEB00F484A0 /* WeatherVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482314FE1F031EEB00F484A0 /* WeatherVoice.swift */; };
 		830DFF911EFAD2CC0057A79C /* UIView+rotate360Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */; };
+		83356B361F086CF20060EE17 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83356B351F086CF20060EE17 /* RootViewController.swift */; };
 		833AAF031EF5E2980043E507 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherModel.swift */; };
 		833AAF041EF5E2980043E507 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833AAF021EF5E2980043E507 /* WeatherModel.swift */; };
 		835CEED81EFDE5B6001AB8FB /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835CEED71EFDE5B6001AB8FB /* ForecastViewModel.swift */; };
@@ -67,6 +68,7 @@
 		482314FE1F031EEB00F484A0 /* WeatherVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherVoice.swift; sourceTree = "<group>"; };
 		6ABD526DC97F0E76A118FCA1 /* Pods-AudioWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioWeather/Pods-AudioWeather.release.xcconfig"; sourceTree = "<group>"; };
 		830DFF901EFAD2CC0057A79C /* UIView+rotate360Degrees.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+rotate360Degrees.swift"; sourceTree = "<group>"; };
+		83356B351F086CF20060EE17 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		833AAF021EF5E2980043E507 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		833AAF051EF5F02B0043E507 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		83441E2A1F02F30D0067F975 /* weather-example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "weather-example.json"; path = "../../weather-example.json"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		83D33DB11EF88DE300B44E0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				83356B351F086CF20060EE17 /* RootViewController.swift */,
 				836221961EF9908B0021EA57 /* ForecastViewController.swift */,
 				8369DC351EF49E6C00B494E6 /* MainViewController.swift */,
 				8362219A1EF9CBDA0021EA57 /* SearchViewController.swift */,
@@ -521,6 +524,7 @@
 				482314FC1F031B9200F484A0 /* UINavigationController+transparent.swift in Sources */,
 				835CEEDA1EFDE667001AB8FB /* ForecastModel.swift in Sources */,
 				83C215571F008BAD00ADB24F /* String+CompassDirection.swift in Sources */,
+				83356B361F086CF20060EE17 /* RootViewController.swift in Sources */,
 				8369DC5A1EF4A2BF00B494E6 /* WeatherAPIManager.swift in Sources */,
 				83C2154A1F00747100ADB24F /* UnitsModel.swift in Sources */,
 				830DFF911EFAD2CC0057A79C /* UIView+rotate360Degrees.swift in Sources */,

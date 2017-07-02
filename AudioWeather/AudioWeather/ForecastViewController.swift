@@ -25,13 +25,17 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.layer.backgroundColor = UIColor.clear.cgColor
         tableView.backgroundColor = UIColor.clear
         
-        updateTable()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateTable), name: .weatherNotification, object: nil)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateTable()
     }
     
     // MARK: Helper methods
