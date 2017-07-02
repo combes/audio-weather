@@ -48,5 +48,3 @@ Also parse the following:
     * pressure ("in")
     * speed ("mph")
     * temperature ("F")
-
-*Under Active Development*
