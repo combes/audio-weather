@@ -28,7 +28,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Actions
-    func dismissView() {
+    @objc func dismissView() {
         dismiss(animated: true, completion: nil)
     }
     

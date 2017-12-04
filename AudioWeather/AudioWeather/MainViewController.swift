@@ -69,6 +69,10 @@ class MainViewController: UIViewController {
         updateFieldsMainThread()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     func updateFieldsWith(model: WeatherModel) {
         let viewModel = WeatherViewModel(model: model)
         city.text = viewModel.city
@@ -118,12 +122,12 @@ class MainViewController: UIViewController {
     }
     
     // MARK: Action methods
-    func showSearch() {
+    @objc func showSearch() {
         performSegue(withIdentifier: "search", sender: self)
     }
 
     // MARK: Helper methods
-    func updateFieldsFromNotification() {
+    @objc func updateFieldsFromNotification() {
         DispatchQueue.main.async {
             self.updateFieldsMainThread()
             // Animate labels only when data is refreshed from server

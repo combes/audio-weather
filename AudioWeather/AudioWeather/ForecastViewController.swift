@@ -39,7 +39,7 @@ class ForecastViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     // MARK: Helper methods
-    func updateTable() {
+    @objc func updateTable() {
         DispatchQueue.main.async {
             let data = WeatherLoader().data
             if data != JSON.null {

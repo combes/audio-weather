@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set global appearance of navigation
         UIApplication.shared.statusBarStyle = .lightContent
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: UIControlState.normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: UIControlState.normal)
         UINavigationBar.appearance().tintColor = UIColor.white
 
         // Prepare for background fetch
@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler(.newData)
     }
 
-    func weatherUpdated() {
+    @objc func weatherUpdated() {
         // Received notification of data update
         
         // Post local notification of weather data updated
